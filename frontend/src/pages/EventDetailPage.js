@@ -23,8 +23,8 @@ export default function EventDetailPage() {
     )
 }
 
-async function loadEvents(id) {
-    const response = await fetch('http://localhost:8080/events/' + eventId);
+async function loadEvent(id) {
+    const response = await fetch('http://localhost:8080/events/' + id);
 
     if (!response.ok) {
         throw json({ message: 'Could not fetch details for selected event.' },
@@ -53,7 +53,7 @@ export async function loader({ request, params }) {
     const eventId = params.eventId
 
     return defer({
-        event: await loadEvents(eventId),
+        event: await loadEvent(eventId),
         events: loadEvents()
     })
 }
