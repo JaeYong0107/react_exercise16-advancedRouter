@@ -1,5 +1,7 @@
+import PageContent from '../components/PageContent';
+
 export default function HomePage() {
-    return (<>
-        <h1>HomePage 입니다.</h1>
-    </>)
+    return <PageContent title="Welcome">
+        <p>Brousw all aour amazing events!</p>
+    </PageContent>
 }
